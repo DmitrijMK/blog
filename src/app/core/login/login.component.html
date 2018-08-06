@@ -1,0 +1,43 @@
+<form [formGroup]="loginForm"
+(submit)="authorization(loginForm.value)">
+
+  <mat-form-field>
+    <input matInput
+           placeholder="Введите Ваш login"
+           formControlName="login"
+           required>
+    <mat-error *ngIf="loginForm.controls.login?.hasError('required')">
+      Поле не должно быть пустым
+    </mat-error>
+
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput
+           placeholder="Введите Ваш пароль"
+           formControlName="passWord"
+           [type]="hide ? 'password' : 'text'"
+           required>
+    <mat-icon matSuffix
+              (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+    </mat-icon>
+
+    <mat-error *ngIf="loginForm.controls.passWord?.hasError('required')">
+      Поле не должно быть пустым
+    </mat-error>
+
+  </mat-form-field>
+
+  <button mat-raised-button
+          color="primary"
+          [disabled]="loginForm.invalid"
+  >{{ loginForm.invalid ? 'Введите данные' : 'Войти'}}</button>
+</form>
+
+ <button routerLink="../registration"
+         mat-button
+         class="is_login"
+         color="primary">Еще нет аккаунта?</button>
+
+{{ loginForm.status }}
+{{ loginForm.value | json }}

@@ -1,0 +1,12 @@
+<button mat-icon-button
+        routerLink="">
+    <mat-icon aria-label="Example icon-button with a heart icon">home</mat-icon>
+</button>
+<button *ngIf="isLogin()" mat-icon-button
+        routerLink="core/registration">
+    <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+</button>
+<button *ngIf="isLogin()" mat-icon-button
+        routerLink="core/login">
+    <mat-icon aria-label="Example icon-button with a heart icon">account_box</mat-icon>
+</button>
