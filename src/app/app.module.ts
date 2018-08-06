@@ -17,6 +17,7 @@ import { MenuComponent } from './menu/menu.component';
 import { LocalstorageService } from './core/localstorage/localstorage.service';
 import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [LocalstorageService, AuthGuard],
   bootstrap: [AppComponent]
