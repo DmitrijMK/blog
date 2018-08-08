@@ -7,7 +7,7 @@ import { NestoriaService } from '../shared/sevices/nestoria.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public datas?;
+  public datas;
 
   constructor(private http: NestoriaService) {
   }

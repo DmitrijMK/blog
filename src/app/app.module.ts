@@ -25,7 +25,6 @@ import { LocalstorageService } from './core/localstorage/localstorage.service';
 import { AuthGuard } from './core/guards/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { NestoriaService } from './shared/sevices/nestoria.service';
-import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
