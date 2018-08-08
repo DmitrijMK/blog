@@ -1,3 +1,9 @@
-<p>
-  form works!
-</p>
+<form class="search_form"
+      [formGroup]="search"
+      (submit)="searchHouse(search.value.search)">
+  <mat-form-field class="search_field">
+    <input formControlName="search"
+           matInput
+           value="brighton">
+  </mat-form-field>
+</form>

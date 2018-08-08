@@ -10,14 +10,23 @@ import { SharedComponent } from './shared/shared.component';
 import { LoginComponent } from './core/login/login.component';
 import { RegistrationComponent } from './core/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule, MatSnackBarModule,
+  MatToolbarModule
+} from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './menu/menu.component';
 import { LocalstorageService } from './core/localstorage/localstorage.service';
 import { AuthGuard } from './core/guards/auth.guard';
-import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NestoriaService } from './shared/sevices/nestoria.service';
+import { HomeModule } from './home/home.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -42,9 +51,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatSnackBarModule
   ],
-  providers: [LocalstorageService, AuthGuard],
+  providers: [LocalstorageService, AuthGuard, NestoriaService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

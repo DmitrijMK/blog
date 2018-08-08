@@ -1,3 +1,22 @@
-<p>
-  home works!
-</p>
+<mat-card *ngFor="let data of datas">
+  <mat-card-header>
+    <mat-card-title>{{ data?.title | slice:0:25}}<span *ngIf="data?.title.length > 25">...</span></mat-card-title>
+  </mat-card-header>
+  <img mat-card-image
+       [src]="data?.img_url">
+  <mat-card-content>
+    <p>
+      {{ data?.summary }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <span>{{data?.price}}</span>
+    <a [href]="data?.lister_url"
+       target="_blank">
+      <button mat-stroked-button
+              color="primary">Посмотреть</button>
+
+    </a>
+  </mat-card-actions>
+</mat-card>
+

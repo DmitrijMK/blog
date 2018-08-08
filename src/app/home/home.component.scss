@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 15px 0;
+
+  mat-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 220px;
+    margin: 15px;
+
+    mat-card-title {
+      font-weight: bold;
+    }
+
+    mat-card-content {
+      flex-grow: 2;
+    }
+
+    mat-card-actions {
+      text-align: center;
+
+      span {
+        margin: 10px 30px;
+        color: forestgreen;
+      }
+    }
+  }
+}
+
