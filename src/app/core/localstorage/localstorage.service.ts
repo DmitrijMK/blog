@@ -1,7 +1,3 @@
-// import { Injectable } from '@angular/core';
-// @Injectable({
-//   providedIn: 'root'
-// })
 export class LocalstorageService {
   setRegitrationData(data) {
     localStorage.setItem('isLogin', JSON.stringify(data));
@@ -22,6 +18,4 @@ export class LocalstorageService {
     }
     return this.getLocalData('isLogin').isLogin;
   }
-
-
 }

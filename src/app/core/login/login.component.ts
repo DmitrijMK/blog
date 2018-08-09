@@ -11,6 +11,7 @@ import { LocalstorageService } from '../localstorage/localstorage.service';
 export class LoginComponent implements OnInit {
   hide = true;
   loginForm: FormGroup;
+
   constructor(
     private fb: FormBuilder, private _local: LocalstorageService, private _route: Router) {
   }
@@ -29,5 +30,4 @@ export class LoginComponent implements OnInit {
       this._route.navigate(['']);
     }
   }
-
 }

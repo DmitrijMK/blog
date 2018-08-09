@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LocalstorageService } from '../core/localstorage/localstorage.service';
 import { Router } from '@angular/router';
 
@@ -7,13 +7,10 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor(private _local: LocalstorageService,
               private _route: Router) {
-  }
-
-  ngOnInit() {
   }
 
   logOut() {

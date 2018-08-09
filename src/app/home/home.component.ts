@@ -9,8 +9,7 @@ import { NestoriaService } from '../shared/sevices/nestoria.service';
 export class HomeComponent implements OnInit {
   dataSource;
 
-  constructor(private http: NestoriaService) {
-  }
+  constructor(private http: NestoriaService) {}
 
   ngOnInit() {
     this.http.dataSource.subscribe(data => this.dataSource = data);

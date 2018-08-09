@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreComponent } from './core/core.component';
-import { AdminComponent } from './admin/admin.component';
 import { FormComponent } from './form/form.component';
 import { SharedComponent } from './shared/shared.component';
 import { LoginComponent } from './core/login/login.component';
@@ -31,7 +30,6 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     CoreComponent,
-    AdminComponent,
     FormComponent,
     SharedComponent,
     LoginComponent,

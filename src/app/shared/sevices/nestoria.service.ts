@@ -6,12 +6,12 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class NestoriaService {
   private apiUrl = 'https://api.nestoria.co.uk/api';
-  dataSource = new Subject();
+  dataSource = new Subject<string>();
 
   constructor(private http: HttpClient) {
   }
 
-  getData(search = 'brighton'): Observable<any> {
+  getData(search = 'brighton'): Observable<Object> {
     const params = new URLSearchParams();
     params.set('encoding', 'json');
     params.set('pretty', '1');

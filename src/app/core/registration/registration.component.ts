@@ -30,11 +30,11 @@ export class RegistrationComponent implements OnInit {
       ]],
       passWord: [null, [
         Validators.required,
-        // Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+){4,20}$')
+        Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+){4,20}$')
       ]],
       repeatPassWord: [null, [
         Validators.required,
-        // Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+){4,20}$'),
+        Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+){4,20}$'),
       ]]
     });
   }

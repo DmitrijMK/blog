@@ -6,12 +6,9 @@ import { LocalstorageService } from '../core/localstorage/localstorage.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent {
 
   constructor(private _local: LocalstorageService) {
-  }
-
-  ngOnInit() {
   }
 
   isLogin() {
