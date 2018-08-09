@@ -52,7 +52,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [LocalstorageService, AuthGuard, NestoriaService],
   bootstrap: [AppComponent]

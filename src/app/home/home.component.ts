@@ -7,19 +7,12 @@ import { NestoriaService } from '../shared/sevices/nestoria.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public datas;
+  dataSource;
 
   constructor(private http: NestoriaService) {
   }
 
   ngOnInit() {
-    this.searchHouse('brighton');
-  }
-
-  searchHouse(value) {
-    this.datas = this.http.getData(value).subscribe(data => {
-      this.datas = data.response.listings;
-      console.log(this.datas);
-    });
+    this.http.dataSource.subscribe(data => this.dataSource = data);
   }
 }

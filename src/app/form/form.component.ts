@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { NestoriaService } from '../shared/sevices/nestoria.service';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-form',
@@ -8,20 +9,14 @@ import { NestoriaService } from '../shared/sevices/nestoria.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  search: FormGroup;
+  search = new FormControl('');
 
-  constructor(
-    private fb: FormBuilder,
-    private nestoria: NestoriaService) {
+  constructor(private http: NestoriaService) {
   }
 
   ngOnInit() {
-    this.search = this.fb.group({
-      search: ['brighton']
-    });
-  }
-
-  searchHouse(value) {
-    this.nestoria.getData(value);
+    this.search.valueChanges
+      .pipe(switchMap(value => this.http.getData(value)), debounceTime(500), distinctUntilChanged())
+      .subscribe(res => this.http.dataSource.next(res.response.listings));
   }
 }

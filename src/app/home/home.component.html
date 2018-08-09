@@ -1,4 +1,4 @@
-<mat-card *ngFor="let data of datas">
+<mat-card *ngFor="let data of dataSource">
   <mat-card-header>
     <mat-card-title>{{ data?.title | slice:0:25}}<span *ngIf="data?.title.length > 25">...</span></mat-card-title>
   </mat-card-header>
